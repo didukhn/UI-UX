@@ -1,0 +1,215 @@
+
+@import './common';
+@import './user';
+@import './time-selector';
+
+@mixin strech($top, $bottom, $right, $left) {
+  top: $top;
+  bottom: $bottom;
+  right: $right;
+  left: $left;
+}
+
+#mainView {
+  display: flex;
+  align-items: center;
+  background: url('../img/bg6.jpg');
+  
+  position: fixed;
+  @include strech(0, 0, 0, 400px);
+
+  white-space: nowrap;
+  overflow: hidden;
+
+  padding: 0 1rem;
+
+  .wrapper{
+    display: block;
+    overflow: hidden;
+  }
+
+  .week-day-list {
+    display: inline-block;
+    position: relative;
+    transition: transform 500ms ease-out;
+    transform: translateX(0);
+  }
+  
+  .week-day {
+    display: inline-block;
+    height: 600px;
+    width: 900px;;
+    margin: 0;
+
+    overflow: hidden;
+
+    background: linear-gradient(135deg, #f6e183,  0%, #bb9d78, 42%, #848896, 63%, #525f83, 78%, #171c33, 100%);
+    background: -webkit-gradient(linear, left top, right bottom, 
+      color-stop(0%,#f6e183), 
+      color-stop(42%,#bb9d78), 
+      color-stop(63%,#848896), 
+      color-stop(78%,#525f83), 
+      color-stop(100%,#171c33));
+    position: relative;
+  }
+
+  .overflow-layout {
+    position: absolute;
+    @include strech(0, 0, 0, 0);
+    display: flex;
+    align-items: center;
+  }
+
+  .moon{
+    position: absolute;
+    bottom: 2.2rem;
+    right: 2.2rem;
+  }
+
+  .hours{
+    width: 2px;
+    height: 60px;
+    background: white;
+    position: absolute;
+    top: 0;
+  }
+
+  .name-day{
+    position: absolute;
+    bottom: 0;
+    font-size: 5.5rem;
+    color: white;
+    margin: 0 0 0 1rem;
+  }
+
+  .sun{
+    position: absolute;
+    top: 2rem;
+  }
+
+  .zahle{    
+    top: 6.5rem;
+    position: absolute;
+    left: -0.4rem;
+    font-size: 1.5rem;
+    color: white;
+  }
+}
+
+
+.week-day{
+  box-shadow: 0 8px 6px -6px black;
+}
+
+.mainphoto{
+  border-radius: 50%;
+    box-shadow: 0 8px 6px -6px black;
+}
+
+.sozial_icons{
+  margin-top: 3rem;
+  font-size: 3rem;
+}
+
+.sozial_icons a{
+  text-decoration: none;
+  color: white;
+}
+
+.sozial_icons a:hover{
+  color: yellow;
+}
+
+aside h1{
+  margin-bottom: 3rem;
+  font-size: 2rem;
+  
+}
+aside p{
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem;
+}
+
+aside .phone-num{
+  margin: 1rem 0 1rem 0;
+}
+
+
+.question{
+  font-size: 2rem;
+    position: absolute;
+    right: 3rem;
+    top: 2rem;
+    color: white;
+    border: .2rem solid white;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    background: burlywood;
+}
+
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    padding-top: 100px; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+    color: white;
+}
+
+.modal-content {
+    
+    margin: auto;
+    padding: 30px;
+    border: 1px solid #888;
+    width: 60%;
+    border-radius: 10px;
+  background-color: lightblue;
+  font-size: 1.5rem;
+}
+
+
+.close {
+    color: teal;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+ .translate-info{
+  transform: translateY(-50px);
+}
+
+.time-selector-info{
+  position: absolute;
+  top: 10px;
+  left: 0px;
+  transition: transform 1s;
+  font-size: 2rem;
+  text-align: center;
+  top: 1.3rem;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;  
+}
+
+
+.time-selector{
+   padding: 3rem;
+  background: rgba(128, 128, 128, 0.5);
+  color: white;
+  
+}

@@ -1,0 +1,261 @@
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+font-family: 'Montserrat', sans-serif;}
+
+.red {
+  background-color: lightcoral; }
+
+.blue {
+  background-color: lightblue; }
+
+.green {
+  background-color: lightgreen; }
+
+aside {
+  text-align: center;
+  color: white;
+  width: 400px;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 400px; }
+  aside img {
+    width: 200px;
+    height: 200px;
+    margin: 100px 100px 50px 100px; }
+  aside h1 {
+    text-align: center; }
+
+.time-selector {
+  position: absolute;
+  border: 2px solid white;
+  padding: 20px; }
+  .time-selector .drag-bar {
+    content: ' ';
+    position: absolute;
+    z-index: 1111;
+    top: 4px;
+    bottom: 4px;
+    width: 10px;
+    background: red; }
+    .time-selector .drag-bar::before {
+      position: absolute;
+      content: ' ';
+      bottom: 100%;
+      border-left: 2px dashed blue;
+      -webkit-transition: top 1s ease;
+      -o-transition: top 1s ease;
+      transition: top 1s ease;
+      top: 100%; }
+    .time-selector .drag-bar.drag::before {
+      top: -205px; }
+    .time-selector .drag-bar.drag.long::before {
+      top: -130px; }
+    .time-selector .drag-bar.left {
+      left: -6px; }
+      .time-selector .drag-bar.left::before {
+        left: 2px; }
+    .time-selector .drag-bar.right {
+      right: -6px; }
+      .time-selector .drag-bar.right::before {
+        right: 3px; }
+
+#mainView {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: url("../img/bg6.jpg");
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 400px;
+  white-space: nowrap;
+  overflow: hidden;
+  padding: 0 1rem; }
+  #mainView .wrapper {
+    display: block;
+    overflow: hidden; }
+  #mainView .week-day-list {
+    display: inline-block;
+    position: relative;
+    -webkit-transition: -webkit-transform 500ms ease-out;
+    transition: -webkit-transform 500ms ease-out;
+    -o-transition: transform 500ms ease-out;
+    transition: transform 500ms ease-out;
+    transition: transform 500ms ease-out, -webkit-transform 500ms ease-out;
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0); }
+  #mainView .week-day {
+    display: inline-block;
+    height: 600px;
+    width: 900px;
+    margin: 0;
+    overflow: hidden;
+    background: -o-linear-gradient(315deg, #f6e183, 0%, #bb9d78, 42%, #848896, 63%, #525f83, 78%, #171c33, 100%);
+    background: linear-gradient(135deg, #f6e183, 0%, #bb9d78, 42%, #848896, 63%, #525f83, 78%, #171c33, 100%);
+    background: -webkit-gradient(linear, left top, right bottom, color-stop(0%, #f6e183), color-stop(42%, #bb9d78), color-stop(63%, #848896), color-stop(78%, #525f83), color-stop(100%, #171c33));
+    position: relative; }
+  #mainView .overflow-layout {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center; }
+  #mainView .moon {
+    position: absolute;
+    bottom: 2.2rem;
+    right: 2.2rem; }
+  #mainView .hours {
+    width: 2px;
+    height: 60px;
+    background: white;
+    position: absolute;
+    top: 0; }
+  #mainView .name-day {
+    position: absolute;
+    bottom: 0;
+    font-size: 5.5rem;
+    color: white;
+    margin: 0 0 0 1rem; }
+  #mainView .sun {
+    position: absolute;
+    top: 2rem; }
+  #mainView .zahle {
+    top: 6.5rem;
+    position: absolute;
+    left: -0.4rem;
+    font-size: 1.5rem;
+    color: white; }
+
+.week-day{
+  box-shadow: 0 8px 6px -6px black;
+}
+
+.mainphoto{
+  border-radius: 50%;
+    box-shadow: 0 8px 6px -6px black;
+}
+
+.sozial_icons{
+  margin-top: 3rem;
+  font-size: 3rem;
+}
+
+.sozial_icons a{
+  text-decoration: none;
+  color: white;
+}
+
+.sozial_icons a:hover{
+  color:burlywood;
+  text-decoration: none;
+}
+
+aside h1{
+  margin-bottom: 3rem;
+  font-size: 2rem;
+  
+}
+aside p{
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem;
+}
+
+aside .phone-num{
+  margin: 1rem 0 1rem 0;
+}
+
+
+.question{
+  font-size: 2rem;
+    position: absolute;
+    right: 3rem;
+    top: 2rem;
+    color: white;
+    border: .2rem solid white;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    background: burlywood;
+}
+
+
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    padding-top: 100px; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+    color: white;
+}
+
+.modal-content {
+    margin: auto;
+    padding: 30px;
+    border: 1px solid #888;
+    width: 60%;
+    border-radius: 10px;
+  background-color: lightblue;
+  font-size: 1.5rem;
+}
+
+
+.close {
+    color: teal;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.time-selector-info{
+  position: absolute;
+  top: 10px;
+  left: 0px;
+  transition: transform 1s;
+  font-size: 2rem;
+  text-align: center;
+  top: 1.3rem;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;  
+}
+
+.translate-info{
+  transform: translateY(-80px);
+  padding: 0 1rem 0 1rem;
+  
+}
+
+.time-selector{
+   padding: 3rem;
+  background: rgba(128, 128, 128, 0.5);
+  color: white;
+  
+}
